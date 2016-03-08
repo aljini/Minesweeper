@@ -49,7 +49,7 @@ public void setBombs()
 
 public void draw ()
 {
-    background( 0 );
+  
     if(isWon()){
         displayWinningMessage();
     }
@@ -103,6 +103,7 @@ public class MSButton
     
     public MSButton ( int rr, int cc )
     {
+
         width = 400/NUM_COLS;
         height = 400/NUM_ROWS;
         r = rr;
@@ -207,14 +208,15 @@ public class MSButton
         if (marked)
             fill(0);
         else if( clicked && bombs.contains(this) ) 
-            fill(255,0,0);
+            fill(255, 153, 204);
         else if(clicked)
-            fill(200);
+            fill(153, 153, 255);
         else 
-            fill(100);
+            fill(204, 204, 255);
 
+        stroke(230, 230, 255);
         rect(x, y, width, height);
-        fill(0);
+        fill(255);
         text(label,x+width/2,y+height/2);
     }
     public void setLabel(String newLabel)
