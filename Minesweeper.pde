@@ -2,13 +2,14 @@
 import de.bezier.guido.*;
 private final static int NUM_ROWS =20;
 private final static int NUM_COLS =20;
-private final static int NUM_MINES =2;
+private final static int NUM_MINES=20;
 private MSButton[][] buttons; //2d array of minesweeper buttons
 private ArrayList <MSButton> bombs =new ArrayList<MSButton>();
 private boolean gameOver=false;
+  
 void setup ()
 {
-    size(400, 600);
+    size(400, 400);
     textAlign(CENTER,CENTER);
     
     Interactive.make( this );
@@ -49,28 +50,23 @@ public void setBombs()
 public void draw ()
 {
     background( 0 );
-    if(isWon())
+    if(isWon()){
         displayWinningMessage();
+    }
 }
 public boolean isWon()
 {
-
-    for(int r=0;r<NUM_ROWS;r++){
-        for(int c=0;c<NUM_COLS;c++){
-
-            if(buttons[r][c].isClicked()==false){
-                 return false;
-            }
+    for(int r = 0; r < NUM_ROWS; r++){
+        for(int c = 0; c < NUM_COLS; c++){
+            if(bombs.contains(buttons[r][c]) && !buttons[r][c].isMarked())
+                return false;
         }
     } 
-    return true;
-
+    return true; 
 }
 public void displayLosingMessage()
 {
-    
-    fill(255);
-    text("You Lose", 200, 550);
+
 
     for(int r = 0; r < NUM_ROWS; r++){
         for(int c = 0; c < NUM_COLS; c++){
@@ -126,20 +122,7 @@ public class MSButton
     {
         return clicked;
     }
-    public boolean isWon()
-    {
-        for(int r=0;r<NUM_ROWS;r++){
-            for(int c=0;c<NUM_COLS;c++){
-
-                if(!buttons[r][c].isClicked()&&!buttons[r][c].isMarked()){
-                    return false;
-                }
-            }
-        }
-
-        return true;
-
-    }
+  
     public void mousePressed () 
     {
         
