@@ -135,7 +135,7 @@ public class MSButton
           clicked = true;
 
            
-           if(keyPressed==true){
+           if(mouseButton== RIGHT){
             marked=!marked;
             }
             else if(isWon()==true){
@@ -206,7 +206,7 @@ public class MSButton
     public void draw () 
     {    
         if (marked)
-            fill(211,228,245);
+            fill(207,140,189);
         else if( clicked && bombs.contains(this) ) 
             fill(255, 153, 204);
         else if(clicked)
