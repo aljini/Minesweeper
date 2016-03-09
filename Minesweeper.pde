@@ -210,7 +210,7 @@ public class MSButton
         else if( clicked && bombs.contains(this) ) 
             fill(255, 153, 204);
         else if(clicked)
-            fill(153, 153, 255);
+            fill(185, 185, 255);
         else 
             fill(204, 204, 255);
 
