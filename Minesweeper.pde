@@ -206,17 +206,17 @@ public class MSButton
     public void draw () 
     {    
         if (marked)
-            fill(207,140,189);
+            fill(255);
         else if( clicked && bombs.contains(this) ) 
-            fill(255, 153, 204);
+            fill(255, 209, 201);
         else if(clicked)
             fill(180, 180, 255);
         else 
             fill(204, 204, 255);
 
-        stroke(230, 230, 255);
+        stroke(217,248,255);
         rect(x, y, width, height);
-        fill(255);
+        fill(255,255,200);
         text(label,x+width/2,y+height/2);
     }
     public void setLabel(String newLabel)

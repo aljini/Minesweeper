@@ -1,8 +1,9 @@
 body {
 
-   
-    background-color: rgb(255);
-    color: rgb(252,194, 245);
+   background:url("kawaii.jpg");
+
+    
+    color: rgb(255, 209, 201);
     font-family: 'Playfair Display', serif;
     text-align: center;
 }
